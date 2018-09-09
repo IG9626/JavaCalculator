@@ -1,0 +1,83 @@
+import java.util.Scanner;
+public class Main {
+
+  public static void main(String args[]) {
+
+    //
+    float a;
+
+    //
+    float b;
+
+    //what you enter for the left side of the operator
+    float c;
+
+    //what you enter for the right side of the operator 
+    float d;
+
+    //how I am going to make my for loop
+    int y;
+    
+    //how I am going to choose the operator
+    String o;
+
+    String p;
+
+    //allows me to enter values, while the program is running
+    Scanner in = new Scanner (System.in);
+    System.out.println("click any NUMBER to open");
+    y = in.nextInt();
+    System.out.println("You chose"+ y);
+    
+    //loop to see if you want to open the calculator
+    for (y = 1;y<= 10; y++){
+
+    // entering the left side operator
+    System.out.println("Enter the number you want on the left side of the operator");
+    c = in.nextFloat();
+    System.out.println("You entered the number: "+ c);
+
+    //entering for the right side of the operator
+    System.out.println("Enter the number you want on the right side of the operator");
+    d = in.nextFloat();
+    System.out.println("You entered the number: "+ d);
+
+  
+    p = in.nextLine();
+    
+
+    //entering something for the operator
+    System.out.println("enter the operator:");
+    o = in.nextLine();
+    System.out.println("You entered the operator: " + o);
+
+    //this is a series of if statements to run through the diffrent opperators and find which formula goes with wich operator
+      if(o.equals("+")) {
+        System.out.println(c + "+" + d + "=" + c+d);
+      }
+       if (o.equals("-")){
+         System.out.println(c + "-" + d + "=");
+        System.out.println(c-d);
+      }
+      if (o.equals("*")){
+        System.out.println(c + "*" + d + "=" + c*d);
+        }
+      if (o.equals("/")) {
+        System.out.println(c + "/" + d + "=" + c/d);
+      }
+      else{
+        System.out.println("DID NOT TYPE A VALID OPERATOR--valid operators('+' '-' '*' '/')");
+      }
+
+   System.out.println("do you want to use calculator again?1=Yes,12=No");
+   y = in.nextInt();
+   System.out.println(".");
+    }
+    System.out.println("Calculator Closed");
+  }
+      interface MathOperation {
+      int operation(int a ,int b);
+      }
+}
+
+
